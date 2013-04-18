@@ -1,0 +1,145 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.paho</groupId>
+    <artifactId>paho-parent</artifactId>
+    <version>1.0.1</version>
+    <packaging>pom</packaging>
+    <name>Paho :: Administrative Parent</name>
+    <description>Administrative parent pom for Paho modules</description>
+    <url>${paho.url}</url>
+    <inceptionYear>2011</inceptionYear>
+
+
+    <issueManagement>
+        <system>bugzilla</system>
+        <url>https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Paho</url>
+    </issueManagement>
+    <mailingLists>
+        <mailingList>
+            <name>Paho Developer Mailing List</name>
+            <archive>http://dev.eclipse.org/mhonarc/lists/paho-dev</archive>
+            <subscribe>https://dev.eclipse.org/mailman/listinfo/paho-dev</subscribe>
+            <unsubscribe>https://dev.eclipse.org/mailman/listinfo/paho-dev</unsubscribe>
+        </mailingList>
+    </mailingLists>
+
+    <developers>
+        <developer>
+            <name>Nick O'Leary</name>
+            <url>http://knolleary.net/</url>
+            <organization>IBM</organization>
+            <organizationUrl>http://www.ibm.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Dave Locke</name>
+            <organization>IBM</organization>
+            <organizationUrl>http://www.ibm.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <contributors>
+        <contributor>
+            <name>Nicolas Deverge</name>
+            <email>ndeverge@ekito.fr</email>
+            <organization>ekito</organization>
+            <organizationUrl>http://www.ekito.fr</organizationUrl>
+        </contributor>
+    </contributors>
+
+
+    <licenses>
+        <license>
+            <name>Eclipse Public License - Version 1.0</name>
+            <url>http://www.eclipse.org/org/documents/epl-v10.php</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git://git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.java.git</connection>
+        <developerConnection>scm:git://git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.java.git</developerConnection>
+        <url>http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/tree/</url>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <paho.url>http://www.eclipse.org/paho</paho.url>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <compilerVersion>1.5</compilerVersion>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!-- explicitly define maven-deploy-plugin after other to force exec order -->
+                <artifactId>maven-deploy-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>org.eclipse.paho.client.mqttv3</module>
+        <module>org.eclipse.paho.client.mqttv3.internal.traceformat</module>
+        <module>org.eclipse.paho.sample.mqttv3app</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.eclipse.paho</groupId>
+                <artifactId>paho-mqtt-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.10</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

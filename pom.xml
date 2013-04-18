@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dcsquare.blog</groupId>
+    <artifactId>paho-wildcard-subscriber</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <inceptionYear>2013</inceptionYear>
+
+    <organization>
+        <name>dc-square GmbH</name>
+        <url>http://www.dc-square.de</url>
+    </organization>
+
+    <description>
+        An example for a wildcard subcriber which stores all MQTT messages to a SQL database.
+    </description>
+
+    <developers>
+        <developer>
+            <id>dobermai</id>
+            <name>Dominik Obermaier</name>
+            <email>dominik.obermaier@dc-square.de</email>
+            <organization>dc-square GmbH</organization>
+            <organizationUrl>http://www.dc-square.de</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <slf4.version>1.7.5</slf4.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>paho-mqtt-client</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.24</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4.version}</version>
+        </dependency>
+
+        <!-- Replace this with a serious logging implementation. e.g. Logback -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4.version}</version>
+        </dependency>
+    </dependencies>
+
+
+    <repositories>
+        <!-- We need this local repository, since Paho is not yet in a Maven Repository -->
+        <repository>
+            <id>lib</id>
+            <name>lib</name>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <url>file://${project.basedir}/lib</url>
+        </repository>
+    </repositories>
+
+
+</project>
