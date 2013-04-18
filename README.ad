@@ -1,0 +1,14 @@
+== What is this?
+This is an example project which shows how a MQTT wildcard subscriber which stores all messages to a MySQL database
+could be implemented.
+
+== Why was Paho bundled with the code?
+
+At the time of the writing, Paho was not yet mavenized. Since Maven is awesome (or at least one of the not-so-sucky
+build systems), we bundled Paho in a Maven file repository with this code.
+
+== Is this production ready?
+
+Probably not, this is a proof of concept. However, this example project could get you started quickly for implementing
+a real world application. We recommend to use a sane Logging Library (like Logback) and upgrading to the latest Paho
+version. Probably Paho is already mavenized when you read this, make sure you check Maven central.
