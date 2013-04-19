@@ -1,5 +1,5 @@
 == What is this?
-This is an example code from the HiveMQ Blog post link:http://www.hivemq.com/mqtt-sql-database["The missing piece between MQTT and a SQL database in a M2M landscape"].This example project shows how a MQTT wildcard subscriber which stores all messages to a MySQL database
+This is an example code from the HiveMQ Blog post link:http://www.hivemq.com/mqtt-sql-database["The missing piece between MQTT and a SQL database in a M2M landscape"]. This example project shows how a MQTT wildcard subscriber which stores all messages to a MySQL database
 could be implemented.
 
 == Why was link:http://www.eclipse.org/paho/[Paho] bundled with the code?
