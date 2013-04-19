@@ -14,4 +14,4 @@ a real world application. We recommend to use a sane Logging Library (like Logba
 version. Probably Paho is already mavenized when you read this, make sure you check Maven central.
 
 
-*Important: Wildcard root subscribers are not the smartest way to store all MQTT messages into a database. See link:http://www.hivemq.com/mqtt-sql-database/[this link]
+*Important: Wildcard root subscribers are not the smartest way to store all MQTT messages into a database. See link:http://www.hivemq.com/mqtt-sql-database/[this link]*
